@@ -860,8 +860,8 @@ async function listRequests(request, response, next) {
        JOIN request_categories c ON c.id = r.category_id
        LEFT JOIN users a ON a.id = r.assigned_mis_user_id
        LEFT JOIN technicians t ON t.id = r.assigned_technician_id
-       ${where} ORDER BY ${sortColumn} ${direction}, r.id DESC LIMIT ? OFFSET ?`,
-      [...params, limit, (page - 1) * limit],
+       ${where} ORDER BY ${sortColumn} ${direction}, r.id DESC LIMIT ${limit} OFFSET ${(page - 1) * limit}`,
+        params,
     );
     response.json({ requests, page, limit, total });
   } catch (error) {
