@@ -31,5 +31,5 @@ FROM (
 ) AS seed
 WHERE NOT EXISTS (
   SELECT 1 FROM technicians existing
-  WHERE existing.name = seed.name AND existing.is_placeholder = TRUE
+  WHERE BINARY existing.name = BINARY seed.name AND existing.is_placeholder = TRUE
 );
