@@ -1,0 +1,27 @@
+{
+  "name": "requesthub-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RequestHub API and MySQL database tools",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "setup-mysql": "node src/setup-mysql.js",
+    "migrate": "node src/migrate.js",
+    "bootstrap-admin": "node src/bootstrap-admin.js",
+    "reset-admin-password": "node src/reset-admin-password.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "multer": "^2.0.2",
+    "mysql2": "^3.14.4"
+  }
+}
